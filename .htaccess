@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#lvl 31
+RewriteRule ^data/imgs/([^/]*)\.jpg$ backend.php?a=img&id=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,PT,L]
+
+</IfModule>
+
+Options +ExecCGI -Indexes
+ErrorDocument 404 /error/notfound
+ErrorDocument 403 /error/notallowed

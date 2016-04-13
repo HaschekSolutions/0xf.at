@@ -1,0 +1,45 @@
+/*
+th.headerSortUp { 
+    background-image: url(/css/icons/asc.png); 
+} 
+
+th.headerSortDown { 
+    background-image: url(/css/icons/desc.png); 
+}
+*/
+
+th
+{
+	position:relative;
+}
+
+th.header.headerSortUp:after
+{
+	position:absolute;
+	font-family: FontAwesome;
+	top:4;
+	right:5px;
+	content: "\f0dd";
+}
+
+th.header.headerSortDown:after
+{
+	position:absolute;
+	font-family: FontAwesome;
+	top:4;
+	right:5px;
+	content: "\f0de";
+}
+
+th.header { 
+    cursor: pointer; 
+} 
+
+th.header:after
+{
+	position:absolute;
+	font-family: FontAwesome;
+	top:4;
+	right:5px;
+	content: "\f0dc";
+}

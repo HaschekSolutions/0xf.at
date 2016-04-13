@@ -1,0 +1,72 @@
+{
+    "id": 1,
+    "jsonrpc": "2.0",
+    "total": 5,
+    "result": [
+        {
+            "id": 1,
+            "guid": "3d7d4bd2-69e7-4df9-a54a-12f8ee1410bb",
+            "password": "Vencom",
+            "age": 32,
+            "account_status": "locked",
+            "name": "Caroline Carrington",
+            "gender": "female",
+            "phone": "871-586-2123",
+            "email": "caroline@vencom.com",
+            "address": "18595, Augusta, Park Avenue South at 19th Street",
+            "registered": "2005-04-07T10:06:47 -02:00"
+        },
+        {
+            "id": 2,
+            "guid": "9e77151a-a977-40f8-b3d0-37bbdb09af3f",
+            "password": "Nanobanc",
+            "age": 33,
+            "account_status": "locked",
+            "name": "Kimberly Gardner",
+            "gender": "female",
+            "phone": "875-435-3509",
+            "email": "kimberly@nanobanc.com",
+            "address": "20507, Springs, Horatio Streets",
+            "registered": "2012-05-22T18:49:36 -02:00"
+        },
+        {
+            "id": 3,
+            "guid": "2a28f160-68f0-40e6-8ac3-afc1a92e68dd",
+            "password": "Unologic",
+            "age": 33,
+            "account_status": "locked",
+            "name": "Alexis Bush",
+            "gender": "male",
+            "phone": "843-447-3975",
+            "email": "alexis@unologic.com",
+            "address": "36935, Bellevue, Washington Street",
+            "registered": "1994-09-14T17:53:14 -02:00"
+        },
+        {
+            "id": 4,
+            "guid": "bc3c1364-4b24-4f60-8fe4-7628e72391ed",
+            "password": "Vencom",
+            "age": 40,
+            "account_status": "active",
+            "name": "Paige Youmans",
+            "gender": "female",
+            "phone": "857-579-3847",
+            "email": "paige@vencom.com",
+            "address": "14622, Flint, Harrison Street",
+            "registered": "2007-07-15T09:55:40 -02:00"
+        },
+        {
+            "id": 5,
+            "guid": "3464fe47-08ec-48fb-a9fb-1e9d493fbcdc",
+            "password": "Navivacs",
+            "age": 36,
+            "account_status": "locked",
+            "name": "Maria Murphy",
+            "gender": "female",
+            "phone": "825-550-2745",
+            "email": "maria@navivacs.com",
+            "address": "37862, Corona, Madison Avenue",
+            "registered": "1998-05-03T04:02:51 -02:00"
+        }
+    ]
+}

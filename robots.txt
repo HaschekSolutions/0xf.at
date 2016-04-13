@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Disallow: /play/solutionforlevel7 #don't allow google to find the solution for level 7

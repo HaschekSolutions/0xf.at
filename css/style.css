@@ -1,0 +1,36 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  
+}
+
+.clear
+{
+	clear:both;
+	height:1px;
+}
+
+.progress-bar
+{
+	/* CSS3 Progress Bar Transitions */
+	transition: width 2s ease;
+	-moz-transition: width 2s ease;
+	-webkit-transition: width 2s ease;
+	-o-transition: width 2s ease;
+	-ms-transition: width 2s ease;
+}
+
+.menu_item > a > center >  i
+{
+    font-size:30pt;
+}
+
+.width60s {
+  -webkit-transition: width 60.0s ease !important;
+     -moz-transition: width 60.0s ease !important;
+       -o-transition: width 60.0s ease !important;
+          transition: width 60.0s ease !important;
+}
+
+.red{color:#ff3333}
+.green{color:#62c462;}
+.blue {color:#3399CC;}

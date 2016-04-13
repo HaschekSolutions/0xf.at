@@ -1,5 +1,7 @@
 <?php
 session_start();
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', dirname(__FILE__));
 
 if(file_exists('inc/config.inc.php'))
     include_once('inc/config.inc.php');

@@ -13,6 +13,7 @@ This is a tribute site to the old Starfleet Academy Hackits site which has been 
 - Download this repo: https://github.com/HaschekSolutions/0xf.at/archive/master.zip
 - Unpack it to your web folder
 - rename ```inc/example.config.inc.php``` to ```inc/config.inc.php``` and set the SALT value to some random string (used for user data encryption)
+- Add a cronjob to start the TCP servers on reboot: ```@reboot cd /var/www/0xf/tcp_servers; ./start.sh```
 
 
 # How to create your own level

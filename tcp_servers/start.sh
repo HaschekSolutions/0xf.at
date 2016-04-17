@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
-nodejs tcp_23.js
-nodejs tcp_27.js
+nohup node tcp_23.js &
+nohup node tcp_27.js &

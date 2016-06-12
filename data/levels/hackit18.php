@@ -9,7 +9,7 @@ class Hackit18 implements Hackit
 
 	public function isSolved()
 	{
-        if($_REQUEST['pw']==$_SESSION['morse_pw'])
+        if(strtolower($_REQUEST['pw'])==strtolower($_SESSION['morse_pw']))
             return true;
         else
             return false;

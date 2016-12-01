@@ -59,7 +59,7 @@ class Hackit29 implements Hackit
         }
         //$_SESSION['table'] = $a->Array2DToTable($field);
 
-        $answer = round($field[$heat_read_field_x][$heat_read_field_y]);
+        $answer = round($field[$heat_read_field_y][$heat_read_field_x]);
       }
       $_SESSION['levels'][basename(__FILE__, '.php')] = $answer;
     }

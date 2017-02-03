@@ -18,8 +18,8 @@ class Hackit8 implements Hackit
 
 	public function prepare()
 	{
-		$_SESSION['levels'][basename(__FILE__, '.php')] = 'e6fo0d58acaf95b2'.substr(md5(session_id), 2,5).'c2152ff0';
-		$_SESSION['wrong'][basename(__FILE__, '.php')] = 'e6f00d58acaf95b2'.substr(md5(session_id), 2,5).'c2152ff0';
+		$_SESSION['levels'][basename(__FILE__, '.php')] = 'e6fo0d58acaf95b2'.substr(md5(session_id()), 2,5).'c2152ff0';
+		$_SESSION['wrong'][basename(__FILE__, '.php')] = 'e6f00d58acaf95b2'.substr(md5(session_id()), 2,5).'c2152ff0';
 	}
 
 	public function render()

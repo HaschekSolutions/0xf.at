@@ -10,8 +10,8 @@ class CryptoModel extends Model
 				$text=$params['text'];
 				$pw=$params['pw'];
 				$hash=$this->getFreeHash();
-				$this->createBin($enc,$hash);
 				$enc = $this->encrypt($text,$pw,$hash);
+                $this->createBin($enc,$hash);
 				return array('status'=>'OK','hash'=>$hash,'result'=>$enc);
 			break;
 
@@ -29,22 +29,27 @@ class CryptoModel extends Model
 		$offset = $this->getOffset($p2key);
 		$shortkey = substr($p2key, $offset,($offset+23));
 		$iv = $this->iv();
-		//$iv = md5(md5($key).SALT);
 
 		while(strlen($string)<4096)
 		{
 			$string = ' '.$string.' ';
 		}
 
-		$encrypted = base64_encode($iv.mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $shortkey, $check.$string, MCRYPT_MODE_CBC, $iv));
-
+        $encrypted = base64_encode($iv.openssl_encrypt($check.$string, 'AES-256-CBC', $shortkey, 0, $iv));
 		return $encrypted;
 	}
 
 	function iv()
 	{
-		$iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_CBC);
-		return mcrypt_create_iv($iv_size, MCRYPT_RAND);
+	    $secureIV = false;
+        $iv_size = openssl_cipher_iv_length('AES-256-CBC');
+        $iv = null;
+
+	    while (!$secureIV) {
+            $iv = openssl_random_pseudo_bytes($iv_size, $secureIV);
+        }
+
+		return $iv;
 	}
 
 	function decrypt($str,$key,$hash)
@@ -59,10 +64,10 @@ class CryptoModel extends Model
 		if ($str === false || strlen($str) < 32)
 			return false;
 
-		$iv = substr($str, 0, 32);
+		$iv = substr($str, 0, 16);
+		$encrypted = substr($str, 16);
 
-		$encrypted = substr($str, 32);
-		$decrypted = trim(rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $shortkey, $encrypted, MCRYPT_MODE_CBC, $iv), "\0"));
+        $decrypted = trim(rtrim(openssl_decrypt($encrypted, 'AES-256-CBC', $shortkey, 0, $iv)));
 
 		if ($decrypted === false || is_null($decrypted) || strlen($decrypted) < 4)
 			return false;

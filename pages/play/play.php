@@ -31,12 +31,6 @@ class Play extends Page
             }
         }
 
-        //$o.=$html->well('<h2>Session:</h2>'.nl2br(print_r($_SESSION,true)));
-        //$um = new UsersModel;
-        //$o.=$html->well('<h2>File:</h2>'.nl2br(print_r($um->loadUser($_SESSION['user'],$_SESSION['sid'],false),true)));
-        //var_dump($um->loadUser($_SESSION['user'],$_SESSION['uid'],false));
-        
-
         $this->set('title','Start 0xf');
         //$this->set('header','Header');
         $this->set('content',$o);
@@ -116,6 +110,7 @@ class Play extends Page
     }
 
 
+    /* This is where it's decided if the level was completed or not */
     function catchall($params)
     {
         $html = new HTML;

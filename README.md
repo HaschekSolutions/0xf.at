@@ -15,6 +15,7 @@ It's licensed under GPL3 which means you can copy, sell, change 0xfat but all ch
 ### What do I need to host my own 0xf.at instance?
 - A webserver running Apache or nginx
 - PHP 5.5 or higher
+- NodeJS for the TCP server levels
 - A (sub) domain
 - No database needed
 

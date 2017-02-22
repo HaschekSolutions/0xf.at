@@ -21,17 +21,20 @@ class Hackit1 implements Hackit
 
 	public function render()
 	{
-		return '            <div>Easy beginnings</div>
-            <input id="pw" type="password" />
-            <br/><input type="button" value="OK" onClick="checkPW()"/>
-            <script type="text/javascript">
-                function checkPW()
-                {
-                    var el = document.getElementById(\'pw\');
-                    if(el.value=="'.$_SESSION['levels'][basename(__FILE__, '.php')].'")
-                        document.location.href="?pw="+el.value;
-                    else alert("Wrong password!");
-                }
-            </script>';
+		return '<h3>Easy beginnings</h3>
+			<form id="level">
+				<input type="password" name="pw" />
+				<br />
+				<input type="submit" value="OK" />
+			</form>
+			<script type="text/javascript">
+				$(\'#level\').submit(function(event) {
+					var password = $(event.target).find(\'[name=pw]\').val();
+                    if(password !== "'.$_SESSION['levels'][basename(__FILE__, '.php')].'") {
+                    	event.preventDefault();
+                    	alert(\'Wrong Password!\');
+                    }
+				});
+			</script>';
 	}
 }

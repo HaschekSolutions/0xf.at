@@ -117,6 +117,9 @@ class Play extends Page
         $level = $params[0];
         if(!$level){$this->index();return;}
 
+        if(strpos($level,'?')!==false)
+            $level = substr($level,0,strpos($level,'?'));
+
         if(file_exists(ROOT.DS.'data'.DS.'levels'.DS.'hackit'.$level.'.php'))
         {
             $lid = $level;

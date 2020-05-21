@@ -79,9 +79,9 @@ class Login extends Page
             $post = $a->post('https://www.google.com/recaptcha/api/siteverify',array('secret'=>'6Lf0XgMTAAAAADoLzkvjsIL2GnUufuQ5HXeLaxqN','response'=>$_POST['g-recaptcha-response'],'remoteip'=>$_SERVER['REMOTE_ADDR']));
             $pj = json_decode($post,true);
 
-            if(!$pj['success'])
+            /*if(!$pj['success'])
                 $o = $html->error("Captcha failed");
-            else if(file_exists($filename))
+            else */if(file_exists($filename))
                 $o = $html->error('This nick is already taken!');
             else if(!$nick || $nick != strtolower(trim($_POST['nick'])))
                 $o = $html->error('Enter a valid nick (only alpha-numberic values)');

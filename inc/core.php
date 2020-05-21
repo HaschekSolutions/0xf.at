@@ -1,6 +1,7 @@
 <?php
+spl_autoload_register('autoload');
 
-function __autoload($className)
+function autoload($className)
 {
 	if (file_exists(ROOT . DS . 'models' . DS . strtolower($className) . '.php'))
 		require_once(ROOT . DS . 'models' . DS . strtolower($className) . '.php');
@@ -33,13 +34,14 @@ function getLang()
     }
 }
 
-function removeMagicQuotes()
+function removeMagicQuotes(&$array)
 {
-    if ( get_magic_quotes_gpc() )
-    {
-            $_GET    = stripSlashesDeep($_GET   );
-            $_POST   = stripSlashesDeep($_POST  );
-            $_COOKIE = stripSlashesDeep($_COOKIE);
+    foreach (array_keys($array) as $key) {
+        if (is_array($array[$key])) {
+            removeMagicQuotes($array[$key]);
+        } else {
+            $array[$key] = stripslashes($array[$key]);
+        }
     }
 }
 
@@ -50,7 +52,7 @@ function callHook()
 
     $queryString = array();
     
-    if (!isset($url))
+    if (!isset($url) || $url=='')
     {
             $controller = 'home';
             $action = 'index';
@@ -74,7 +76,7 @@ function callHook()
 
     if(!file_exists(ROOT . DS . 'pages' . DS . $controller . DS . $controller . '.php'))
     {
-            $controller = 'error';
+            $controller = 'theerror';
             $action = 'notfound';
             $queryString = array('error'=>$url);
     }
@@ -86,7 +88,7 @@ function callHook()
 
     if(!$dispatch->maySeeThisPage()) 
     {
-        $controllerName = 'error';
+        $controllerName = 'theerror';
         $action = 'notallowed';
         $dispatch = new $controllerName('error',$action,true);
     }

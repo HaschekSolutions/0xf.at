@@ -8,7 +8,7 @@ class LevelView
 		foreach($_SESSION['stats'] as $level=>$data)
 		{
 			$rows[] = '[\'Level '.$level.'\','.$data['solved'].',\'#62c462\']';
-			$time[] = '[\'Level '.$level.'\','.ceil(($data['avgtime']/60)).',\'#62c462\']';
+			$time[] = '[\'Level '.$level.'\','.(is_numeric($data['avgtime'])?ceil(($data['avgtime']/60)):$data['avgtime']).',\'#62c462\']';
 		}
 
 		$rows = implode(',', $rows);

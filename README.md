@@ -1,16 +1,3 @@
-      ___        __       _ 
-     / _ \__  __/ _| __ _| |_  
-    | | | \ \/ / |_ / _` | __| 
-    | |_| |>  <|  _| (_| | |_   
-     \___//_/\_\_|(_)__,_|\__|  
-
-# 0xf.at - hackits for everyone
-
-
-
-
-
-
 <p align="center">
   <a href="" rel="noopener">
  <img src="https://raw.githubusercontent.com/HaschekSolutions/0xf.at/master/css/imgs/logo.png" alt="0xf.at logo"></a>

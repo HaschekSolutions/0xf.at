@@ -30,7 +30,8 @@ class Login extends Page
 
         if($_SESSION['user'])
         {
-            unset($_SESSION['user']);
+            //unset($_SESSION['user']);
+            session_destroy();
             $o = '<script>localStorage.sid = "";</script>';
             $o.= $html->goToLocation('/',false);
             $this->set('content',$o);

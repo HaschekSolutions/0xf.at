@@ -22,7 +22,7 @@ class Hackit21 implements Hackit
             $words = $this->getRandomWords(10);
             $answer = implode(";", $words['orig']);
             $_SESSION['levels'][basename(__FILE__, '.php')] = $answer;
-            $_SESSION['wrong'] = implode(";", $words['words']);
+            $_SESSION['wrong'][basename(__FILE__, '.php')] = implode(";", $words['words']);
             $_SESSION['starttime'][basename(__FILE__, '.php')]=time();
         }
 	}
@@ -44,7 +44,7 @@ class Hackit21 implements Hackit
 		$a = new Algorithms;
 
 		return '            <p>'.$this->getDescription().'</p>
-            <pre><code class="">'.$_SESSION['wrong'].'</code></pre><br/>
+            <pre><code class="">'.$_SESSION['wrong'][basename(__FILE__, '.php')].'</code></pre><br/>
             <div><strong>Example:</strong><br/>
             Text: <span class="blue">masmei;ixamme;ineram;vpamrie</span><br/>
             Solution: <span class="green">sammie;maxime;marine;vampire</span><br/></div>

@@ -57,17 +57,6 @@ class HTML {
         return $o;
     }
 
-    private function _fetchTinyUrl($url) {
-        $ch = curl_init();
-        $timeout = 5;
-        curl_setopt($ch, CURLOPT_URL, 'http://tinyurl.com/api-create.php?url=' . $url[0]);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
-        $data = curl_exec($ch);
-        curl_close($ch);
-        return '<a href="' . $data . '" target = "_blank" >' . $data . '</a>';
-    }
-
     function getCheckbox($name,$text='',$value=1,$checked=false,$disabled=false)
     {
         return '<div class="checkbox">

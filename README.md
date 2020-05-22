@@ -6,18 +6,55 @@
 
 # 0xf.at - hackits for everyone
 
-0xf.at (or oxfat it you prefer) is a password-riddle (so called hackit) site. You could say it's [Project Euler](https://projecteuler.net/) for geeks.
+
+
+
+
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://raw.githubusercontent.com/HaschekSolutions/0xf.at/master/css/imgs/logo.png" alt="0xf.at logo"></a>
+</p>
+
+<h1 align="center">0xf.at</h1>
+
+
+<h4 align="center"><a href="https://0xf.at">https://0xf.at</a></h4>
+
+<div align="center">
+ 
+  
+![](https://img.shields.io/badge/php-7.3%2B-brightgreen.svg)
+[![](https://img.shields.io/docker/pulls/hascheksolutions/0xf.at?color=brightgreen)](https://hub.docker.com/r/hascheksolutions/0xf.at)
+[![](https://img.shields.io/docker/cloud/build/hascheksolutions/0xf.at?color=brightgreen)](https://hub.docker.com/r/hascheksolutions/0xf.at/builds)
+[![Apache License](https://img.shields.io/badge/license-Apache-brightgreen.svg?style=flat)](https://github.com/HaschekSolutions/0xf.at/blob/master/LICENSE)
+[![HitCount](http://hits.dwyl.io/HaschekSolutions/0xf.at.svg)](http://hits.dwyl.io/HaschekSolutions/0xf.at)
+[![](https://img.shields.io/github/stars/HaschekSolutions/0xf.at.svg?label=Stars&style=social)](https://github.com/HaschekSolutions/0xf.at)
+
+#### Hackits for `javascript`, `PHP`, `HTML`, `password cracking`, `wifi cracking` and more
+
+</div>
+
+# About
+0xf.at (or oxfat it you prefer) is a password-riddle (so called hackit) site. You could say it's [Project Euler](https://projecteuler.net/) for it security or IT in general.
 This is a tribute site to the old Starfleet Academy Hackits site which has been offline for many years now.
+
 
 # License
 It's licensed under GPL3 which means you can copy, sell, change 0xfat but all changes have to be public (also open source) and your code must be released under GPL3 as well.
 
 ### What do I need to host my own 0xf.at instance?
 - A webserver running Apache or nginx
-- PHP 5.5 or higher
+- PHP 7.2 or higher
 - NodeJS for the TCP server levels
 - A (sub) domain
 - No database needed
+- Or Docker
+
+### Running with Docker
+
+Run `docker run --rm --name 0xf -p 8080:80 hascheksolutions/0xf.at` and point your browser to http://localhost:8080
+
 
 ### Installation
 - Download this repo: https://github.com/HaschekSolutions/0xf.at/archive/master.zip

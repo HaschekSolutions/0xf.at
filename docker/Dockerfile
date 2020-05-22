@@ -85,7 +85,9 @@ RUN set -x \
     && mv inc/example.config.inc.php inc/config.inc.php \
     && chown -R nginx:nginx /usr/share/nginx/html
 
-VOLUME /usr/share/nginx/html/data
+VOLUME /usr/share/nginx/html/comments
+VOLUME /usr/share/nginx/html/stats
+VOLUME /usr/share/nginx/html/data/
 
 EXPOSE 80
 

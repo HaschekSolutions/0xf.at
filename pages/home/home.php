@@ -27,12 +27,9 @@ class Home extends Page
 
         $changelog = $html->well('<h2>Changelog</h2>'.$html->liste(
             array(
-            'Level 32 has been fixed',
-            'Now sorted by id again',
-            'Level list can now be sorted. By default sorted by difficulty',
-            'Difficulty is now automatically calculated by the players performance',
-            'You can now create an account to track your progress. No passwords are stored on our servers!',
-            'We are now forcing https for the whole site'
+            'Changed encryption so all users needed to be deleted',
+            'Rewrote for PHP7+',
+            'Randomized password on level 8'
             )));
 
         $reddit = '<a href="https://www.reddit.com/r/0xfat/"><i class="fa fa-reddit"></i> Visit us on reddit: /r/0xfat</a>';

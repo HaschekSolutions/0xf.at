@@ -93,11 +93,13 @@ class LoginView
 		            </div>
 		        </div>
 
+				'.(defined('RECAPTCHA_KEY') && RECAPTCHA_KEY != '' ? '
 		        <div class="form-group">
 		        	<div class="col-lg-10">
-		        		<div class="g-recaptcha" data-sitekey="6Lf0XgMTAAAAADZiMxDHL3pA9Sxx8FO2PDL6i0n0"></div>
+		        		<div class="g-recaptcha" data-sitekey="'.RECAPTCHA_KEY.'"></div>
 		        	</div>
-		        </div>
+				</div>
+				<script src="https://www.google.com/recaptcha/api.js"></script>':'').'
 
 		        <div class="form-group">
 		            <div class="col-lg-10 col-lg-offset-2">
@@ -105,6 +107,6 @@ class LoginView
 		            </div>
 		        </div>
 		    </fieldset>
-		</form>'."<script src='https://www.google.com/recaptcha/api.js'></script>");
+		</form>');
 	}
 }

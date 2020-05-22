@@ -75,13 +75,18 @@ class Login extends Page
 
             $basedir = ROOT.DS.'data'.DS.'users'.DS;
             $filename = $basedir.$nick.'.txt';
+            $captcha = false;
 
-            $post = $a->post('https://www.google.com/recaptcha/api/siteverify',array('secret'=>'6Lf0XgMTAAAAADoLzkvjsIL2GnUufuQ5HXeLaxqN','response'=>$_POST['g-recaptcha-response'],'remoteip'=>$_SERVER['REMOTE_ADDR']));
-            $pj = json_decode($post,true);
+            if(defined('RECAPTCHA_KEY') && RECAPTCHA_KEY != '')
+            {
+                $captcha = true;
+                $post = $a->post('https://www.google.com/recaptcha/api/siteverify',array('secret'=>RECAPTCHA_SECRET,'response'=>$_POST['g-recaptcha-response'],'remoteip'=>$_SERVER['REMOTE_ADDR']));
+                $pj = json_decode($post,true);
+            }
 
-            /*if(!$pj['success'])
+            if($captcha === true && !$pj['success'])
                 $o = $html->error("Captcha failed");
-            else */if(file_exists($filename))
+            else if(file_exists($filename))
                 $o = $html->error('This nick is already taken!');
             else if(!$nick || $nick != strtolower(trim($_POST['nick'])))
                 $o = $html->error('Enter a valid nick (only alpha-numberic values)');
@@ -103,31 +108,6 @@ class Login extends Page
 
 
         $this->set('title','0xf.at | Login/Register');
-        $this->set('content',$o);
-    }
-
-    function resetpw()
-    {
-        $html = new HTML;
-        $um = new UsersModel();
-        $lv = new LoginView();
-
-        $code = $this->params[0];
-        $data = simplequery("SELECT * FROM `forgot_pw` WHERE `code` = '$code'",true);
-        if($data)
-        {
-            $a = new Algorithms;
-            $user = $data['user'];
-            mysql_query("DELETE FROM `forgot_pw` WHERE `code` = '$code'");
-            $password = $a->getRandomHash(20);
-            $_SESSION['temp_pw'] = $password;
-
-            update(array('must_change_pw_on_login'=>1,'password'=>$a->generatePasswordHash($password,$user)),'users',$user);
-            $um->loginUser($user);
-            $html->goToLocation('/');
-        }
-
-        $this->set('title','0xf.at ');
         $this->set('content',$o);
     }
 
@@ -158,8 +138,6 @@ class Login extends Page
             $o = '<script>localStorage.sid="";</script>';
             $this->set('content', $o);
         }
-            
-        
     }
 
     function savesid()

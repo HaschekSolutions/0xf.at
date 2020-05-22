@@ -5,7 +5,7 @@
  *
  * @author Christian
  */
-class Model// extends SQLQuery
+class Model
 {
 	protected $_model;
 

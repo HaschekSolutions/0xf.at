@@ -87,7 +87,7 @@ RUN set -x \
 
 VOLUME /usr/share/nginx/html/comments
 VOLUME /usr/share/nginx/html/stats
-VOLUME /usr/share/nginx/html/data/
+VOLUME /usr/share/nginx/html/data/users
 
 EXPOSE 80
 

@@ -9,6 +9,7 @@ _update() {
     rm -r master 0xf.at-master
     chmod -R 777 data
     chmod -R 777 comments
+    chmod -R 777 stats
 }
 
 _filePermissions() {

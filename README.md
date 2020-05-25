@@ -31,23 +31,22 @@ This is a tribute site to the old Starfleet Academy Hackits site which has been 
 It's licensed under GPL3 which means you can copy, sell, change 0xfat but all changes have to be public (also open source) and your code must be released under GPL3 as well.
 
 ### What do I need to host my own 0xf.at instance?
+
+#### The easy way using docker Docker
+
+Run `docker run --rm --name 0xf -p 8080:80 hascheksolutions/0xf.at` and point your browser to http://localhost:8080
+
+#### The harder way
 - A webserver running Apache or nginx
 - PHP 7.2 or higher
 - NodeJS for the TCP server levels
 - A (sub) domain
 - No database needed
-- Or Docker
 
-### Running with Docker
-
-Run `docker run --rm --name 0xf -p 8080:80 hascheksolutions/0xf.at` and point your browser to http://localhost:8080
-
-
-### Installation
-- Download this repo: https://github.com/HaschekSolutions/0xf.at/archive/master.zip
-- Unpack it to your web folder
-- rename ```inc/example.config.inc.php``` to ```inc/config.inc.php``` and set the SALT value to some random string (used for user data encryption)
-- Add a cronjob to start the TCP servers on reboot: ```@reboot cd /var/www/0xf/tcp_servers; ./start.sh```
+1. Download this repo: https://github.com/HaschekSolutions/0xf.at/archive/master.zip
+2. Unpack it to your web folder
+3. rename ```inc/example.config.inc.php``` to ```inc/config.inc.php``` and set the SALT value to some random string (used for user data encryption)
+4. Add a cronjob to start the TCP servers on reboot: ```@reboot cd /var/www/0xf/tcp_servers; ./start.sh```
 
 
 # How to create your own level
@@ -57,6 +56,10 @@ Run `docker run --rm --name 0xf -p 8080:80 hascheksolutions/0xf.at` and point yo
 3. Edit your level and test it on your site
 
 You can make a pull request if you want your level on the official 0xf.at site.
+
+## Easy development
+
+0xf supports development using the PHP-integrated webserver. So you can just download the code and from the main directory run `php -S localhost:8080` and point your browser to http://localhost:8080
 
 # Trivia
 - The site was originally created to be used by computer science teachers only. The creator Christian Haschek [stated in his blog](http://blog.haschek.at/post/f7e62) that hackits are the first thing he teaches new classes to spark flames for computer science and security.

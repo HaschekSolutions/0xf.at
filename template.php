@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="/css/table_sort.css" rel="stylesheet">
     <script src="/js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script async defer data-domain="0xf.at" src="https://pla.haschek.at/js/plausible.js"></script>
     <!-- Open Graph data -->
     <meta property="og:title" content="0xf.at - Hackits for everyone" />
     <meta property="og:image" content="http://www.0xf.at/css/imgs/logo_bg.jpg" />

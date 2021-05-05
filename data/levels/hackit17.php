@@ -9,7 +9,7 @@ class Hackit17 implements Hackit
 
 	public function isSolved()
 	{
-        if(preg_match('/^[\w][\w-.]+@[\w-.]+\.[a-z]{2,4}$/U', $_REQUEST['pw'], $found))
+        if(preg_match('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i', $_REQUEST['pw'], $found))
             return true;
         else
             return false;
@@ -29,7 +29,7 @@ class Hackit17 implements Hackit
 		return '            <p>'.$this->getDescription().'</p>
 <pre><code class="language-php">function pwCheck($password)
 {
-    return preg_match(\'/^[\w][\w-.]+@[\w-.]+\.[a-z]{2,4}$/U\', $password, $found);
+    return preg_match(\'/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i\', $password, $found);
 }</code></pre>
         <input id="pw" type="password" />
         <br/><input type="button" value="OK" onClick="checkPW()"/>

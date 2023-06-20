@@ -52,8 +52,8 @@ sha1 = ( "'.$_SESSION['string1'][basename(__FILE__, '.php')].'" + "'.$_SESSION['
 </code></pre><br/>
 
 <strong>Example:</strong><br/>
-nonce = "132f4c5f0f"<br/>
-sha1("string1"+"string2"+nonce) -> Results in sha1 hash 000000593a640078a309840d69b4e2064d09ae20 so 132f4c5f0f would be the solution if we were looking for 6 leading zeroes
+nonce = "dnt28wclnx"<br/>
+sha1("string1"+"string2"+nonce) -> Results in sha1 hash 000000140e9731bbf369d8cbc4f7919961020793 so dnt28wclnx would be a solution if we were looking for 6 leading zeroes
 <br/><br/>
             Solution:<br/><input id="pw" type="password" />
             <br/><input type="button" value="OK" onClick="checkPW()"/>

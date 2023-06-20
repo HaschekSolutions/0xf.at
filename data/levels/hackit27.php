@@ -9,7 +9,7 @@ class Hackit27 implements Hackit
 
 	public function isSolved()
 	{
-        $f = preg_replace("/[^a-zA-Z0-9]+/", "", $_REQUEST['pw']);
+        $f = preg_match("/^[a-zA-Z0-9]{0,}$/", "", $_REQUEST['pw']);
         if(!$f)
             $f ='vvcxsaaasdadsasdads';
         $file = ROOT.DS.'data'.DS.'tmp'.DS.$f;

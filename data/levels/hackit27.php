@@ -4,7 +4,7 @@
 class Hackit27 implements Hackit
 {
 	public function getName() { return 'TCP bot';}
-	public function getDescription(){return 'Connect to the TCP server on <span class="green">212.17.118.125</span> port <span class="green">2727</span> and do what it says.<br/>You\'ll have to program a bot that communicates with the server to solve the math problems fast enough.';}
+	public function getDescription(){return 'Connect to the TCP server on <span class="green">'.IP.'</span> port <span class="green">2727</span> and do what it says.<br/>You\'ll have to program a bot that communicates with the server to solve the math problems fast enough.';}
 	public function getTags(){return 'Programming';}
 
 	public function isSolved()

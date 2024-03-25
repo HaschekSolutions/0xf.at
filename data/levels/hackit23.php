@@ -4,7 +4,7 @@
 class Hackit23 implements Hackit
 {
 	public function getName() { return 'Easy sockets';}
-	public function getDescription(){return 'Jerry set up a TCP server on <span class="green">212.17.118.125</span> port <span class="green">2323</span> that holds the password for this level.<br/>All you have to do is connect (with the "telnet" command or <a target="_blank" href="http://netcat.sourceforge.net/">"netcat"</a>), send the auth token below and wait for the password.';}
+	public function getDescription(){return 'Jerry set up a TCP server on <span class="green">'.IP.'</span> port <span class="green">2323</span> that holds the password for this level.<br/>All you have to do is connect (with the "telnet" command or <a target="_blank" href="http://netcat.sourceforge.net/">"netcat"</a>), send the auth token below and wait for the password.';}
 	public function getTags(){return 'Programming';}
 
 	public function isSolved()

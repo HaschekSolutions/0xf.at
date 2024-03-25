@@ -31,4 +31,4 @@ _buildConfig > inc/config.inc.php
 nohup node tcp_servers/tcp_23.js > /dev/null 2>&1 &
 nohup node tcp_servers/tcp_27.js > /dev/null 2>&1 &
 
-tail -f /var/logs/0xf/*.log
+tail -f /var/logs/0xf*

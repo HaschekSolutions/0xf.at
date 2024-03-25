@@ -27,9 +27,7 @@ class Home extends Page
 
         $changelog = $html->well('<h2>Changelog</h2>'.$html->liste(
             array(
-            'Changed encryption so all users needed to be deleted',
-            'Rewrote for PHP7+',
-            'Randomized password on level 8'
+            '2024: Made compatible with PHP8.3',
             )));
 
         $reddit = '<a href="https://www.reddit.com/r/0xfat/"><i class="fa fa-reddit"></i> Visit us on reddit: /r/0xfat</a>';

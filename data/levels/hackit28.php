@@ -432,7 +432,7 @@ class Hackit28 implements Hackit
   public function render()
   {
     $graph = CityGraph::loadFromSession();
-    $edgeList = implode(shuffle_except_not_stupid($graph->getArrowFormattedEdges()), "<br />\n");
+    $edgeList = implode("<br />\n",shuffle_except_not_stupid($graph->getArrowFormattedEdges()));
     return '            
             <p>'.$this->getDescription().'</p><br/>
             Solution (like this: ACDTVZ)<br/>

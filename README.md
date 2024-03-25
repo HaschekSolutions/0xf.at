@@ -11,7 +11,7 @@
 <div align="center">
  
   
-![](https://img.shields.io/badge/php-7.3%2B-brightgreen.svg)
+![](https://img.shields.io/badge/php-8.3%2B-brightgreen.svg)
 [![](https://img.shields.io/docker/pulls/hascheksolutions/0xf.at?color=brightgreen)](https://hub.docker.com/r/hascheksolutions/0xf.at)
 [![](https://img.shields.io/docker/cloud/build/hascheksolutions/0xf.at?color=brightgreen)](https://hub.docker.com/r/hascheksolutions/0xf.at/builds)
 [![Apache License](https://img.shields.io/badge/license-Apache-brightgreen.svg?style=flat)](https://github.com/HaschekSolutions/0xf.at/blob/master/LICENSE)

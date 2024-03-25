@@ -199,7 +199,7 @@ class Algorithms
                 $w[] = trim($lines[rand(0,$count)]);
             }
 
-            return implode(NULL, $w);
+            return implode("", $w);
         }
         
         /**

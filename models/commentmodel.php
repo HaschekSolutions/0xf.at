@@ -8,7 +8,7 @@ class CommentModel extends Model
 	    $file = ROOT.DS.'comments'.DS.'level'.$level.'.json';
 	    if(file_exists($file))
 	    {
-	        $ldata = implode(file($file));
+	        $ldata = file_get_contents($file);
 	        $json = json_decode($ldata,true);
 	        foreach($json as $key=>$data)
 	            if ($data['comment'] && $data['nick'] && $data['timestamp'])

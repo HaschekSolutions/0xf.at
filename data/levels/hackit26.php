@@ -35,7 +35,7 @@ class Hackit26 implements Hackit
             $image = md5(substr(session_id(),-8)).'.png';
             $_SESSION['levels'][basename(__FILE__, '.php')]['answer'] = strtolower($a->getRandomWords(4));
             $_SESSION['levels'][basename(__FILE__, '.php')]['image'] = $image;
-            $im = @ImageCreate(26, strlen($_SESSION['levels'][basename(__FILE__, '.php')]['answer']))
+            $im = ImageCreate(26, strlen($_SESSION['levels'][basename(__FILE__, '.php')]['answer']))
                 or die ("ERROR");
             $background_color = ImageColorAllocate ($im, 255, 255, 255);
             $this->doYourMagic($im,$_SESSION['levels'][basename(__FILE__, '.php')]['answer']);

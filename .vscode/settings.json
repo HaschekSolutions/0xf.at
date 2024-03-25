@@ -1,0 +1,8 @@
+{
+    "html.format.indentInnerHtml": true,
+    "html.format.wrapLineLength": 0,
+    "intelephense.environment.documentRoot": "web/",
+    "terminal.integrated.splitCwd": "workspaceRoot",
+    "phpserver.port": 8080,
+    "phpserver.relativePath": "web/."
+}

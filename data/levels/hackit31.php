@@ -42,6 +42,8 @@ class Hackit31 implements Hackit
     public function renderImage($id)
     {
         header ("Content-type: image/png");
+        if(strpos($id,'.')) // if there is a file extension, remove it
+            $id = substr($id,0,strpos($id,'.'));
         $im = imageCreateFromPng(ROOT.DS.'data'.DS.'imgs'.DS.'0xfat_button.png');
         $background_color = ImageColorAllocate($im, 255,255,255);
         $file = ROOT.DS.'data'.DS.'tmp'.DS.'lvl31_'.$id.'.txt';

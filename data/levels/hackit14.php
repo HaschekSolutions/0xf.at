@@ -10,7 +10,7 @@ class Hackit14 implements Hackit
 	public function isSolved()
 	{
 		$guid = $_REQUEST['guid'];
-        $users = implode(file(ROOT.DS.'data/login_info.json'));
+        $users = file_get_contents(ROOT.DS.'data/login_info.json');
         $json = json_decode($users,true);
 
         if(is_array($json['result']))

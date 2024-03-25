@@ -19,8 +19,8 @@ RUN sed -i 's/E_ALL \& ~E_DEPRECATED \& ~E_STRICT/E_ALL \& ~E_DEPRECATED \& ~E_S
 WORKDIR /var/www/0xf
 
 # Volumes to mount
-VOLUME /var/www/0xf/data
-VOLUME /var/www/0xf/logs
+VOLUME /var/www/0xf/data/users
+VOLUME /var/www/0xf/comments
 
 EXPOSE 80 2323 2727
 

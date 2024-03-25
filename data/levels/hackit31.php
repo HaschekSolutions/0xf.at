@@ -79,10 +79,10 @@ class Hackit31 implements Hackit
         <h4 class="green">Finished '.round(($this->getImageCount()/$this->views)*100).'%</h4><br/>
         
         <h4>Image URL:</h4>
-        <pre><code class="">https://www.0xf.at/data/imgs/'.$_SESSION['levels'][basename(__FILE__, '.php')].'.jpg</code></pre><br/>
+        <pre><code class="">'.URL.'/data/imgs/'.$_SESSION['levels'][basename(__FILE__, '.php')].'.png</code></pre><br/>
 
         <h4>HTML code to include on your website:</h4>
-        <pre><code class="">'.htmlentities('<a href="https://www.0xf.at"><img src="https://www.0xf.at/data/imgs/'.$_SESSION['levels'][basename(__FILE__, '.php')].'.jpg" /></a>').'</code></pre>
+        <pre><code class="">'.htmlentities('<a href="'.URL.'"><img src="'.URL.'/data/imgs/'.$_SESSION['levels'][basename(__FILE__, '.php')].'.png" /></a>').'</code></pre>
 
         <br/><input type="button" value="Refresh" onClick="checkPW()"/>
         <script type="text/javascript">

@@ -21,6 +21,7 @@ WORKDIR /var/www/0xf
 # Volumes to mount
 VOLUME /var/www/0xf/data/users
 VOLUME /var/www/0xf/comments
+VOLUME /var/www/0xf/stats
 
 EXPOSE 80 2323 2727
 

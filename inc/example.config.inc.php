@@ -16,3 +16,6 @@ define('SALT','FILLINSOMETHINGHERE');
 // it in here
 define('RECAPTCHA_KEY','');
 define('RECAPTCHA_SECRET','');
+
+// The IP of the server. Needed for the TCP levels
+define('IP','127.0.0.1');
